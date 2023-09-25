@@ -29,4 +29,4 @@ class HolidaysClient:
 
             return reponse.json()
         except Timeout:
-            return []
+            return {}
