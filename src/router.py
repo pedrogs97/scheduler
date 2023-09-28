@@ -6,10 +6,10 @@ from src.database import get_db_session
 from src.service import CalendarService
 from src.schemas import AddEventCalendarSchema
 
-router = APIRouter(prefix="/Calendar", tags=["Calendar"])
+router = APIRouter(prefix="/calendar", tags=["Calendar"])
 
 
-@router.get("/user/calendar/{use_id}/", status_code=status.HTTP_200_OK)
+@router.get("/user/", status_code=status.HTTP_200_OK)
 async def get_user_scheduler_route(
     user_id: int,
     year: int,
@@ -37,7 +37,7 @@ async def get_user_scheduler_route(
     )
 
 
-@router.post("/user/calendar/", status_code=status.HTTP_200_OK)
+@router.post("/user/", status_code=status.HTTP_200_OK)
 async def post_user_scheduler_route(
     data: AddEventCalendarSchema, db_session: Session = Depends(get_db_session)
 ) -> Response:

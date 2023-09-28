@@ -16,4 +16,4 @@ RUN apt-get update -y && apt-get install curl -y \
 
 WORKDIR /src
 
-CMD [ "uvicorn", "main:app", "--host", "0.0.0.0", "--reload" ]
+CMD [ "uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8001", "--reload" ]
